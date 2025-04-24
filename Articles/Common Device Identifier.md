@@ -15,9 +15,9 @@ Universal uniqueness cannot be guaranteed due to factors such as inconsistent ha
 An OCSF Common Device Identifier is a [UUID Version 8 name-based value](https://www.rfc-editor.org/rfc/rfc9562#name-example-of-a-uuidv8-value-n) computed using:
 - A [Namespace ID](#namespace-id) corresponding to the device's running operating system, and
 - A [Name Value](#name-value) obtained by concatenating with comma separation:
-  1. A version number, 
-  2. A primary device identifer, and
-  3. A secondary device identifier.
+  - A version number,
+  - A primary device identifer, and
+  - A secondary device identifier.
 
 ### Namespace ID
 
