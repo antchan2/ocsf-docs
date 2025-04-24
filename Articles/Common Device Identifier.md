@@ -35,7 +35,7 @@ The Namespace ID is a UUIDv8 named-based value computed using the [Nil UUID](htt
 
 ### Name Value
 
-The Name Value is an ASCII string in the format:
+The Name Value is a UTF-8 string in the format:
 
 ```
 ver=[version],id1=[Primary Unique Device ID],id2=[Secondary Unique Device ID]
