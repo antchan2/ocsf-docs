@@ -12,28 +12,25 @@ Universal uniqueness cannot be guaranteed due to factors such as inconsistent ha
 
 ## Format
 
-An OCSF Common Device Identifier is a [UUID Version 5](https://www.rfc-editor.org/rfc/rfc9562.html#name-uuid-version-5) value computed using:
+An OCSF Common Device Identifier is a [UUID Version 8 name-based value](https://www.rfc-editor.org/rfc/rfc9562#name-example-of-a-uuidv8-value-n) computed using:
 - A [Namespace ID](#namespace-id) corresponding to the device's running operating system, and
 - A [Name Value](#name-value) obtained by concatenating with comma separation:
   1. A version number, 
   2. A primary device identifer, and
   3. A secondary device identifier.
 
-> :information_source: 
-> Since UUIDv5 requires a SHA1 hash and SHA1 has been deprecated in many applications, the design will be updated to use a [named-based UUIDv8 value with SHA-2 hash](https://github.com/ietf-wg-uuidrev/rfc4122bis/blob/83d95da3418a92a13dfa5222c30795244f24f565/draft-ietf-uuidrev-rfc4122bis.md#example-of-a-uuidv8-value-name-based-uuidv8_example_name). The general design still applies.
-
 ### Namespace ID
 
-The Namespace ID is a UUIDv5 value computed using the [Nil UUID](https://www.rfc-editor.org/rfc/rfc9562.html#name-nil-uuid) and the namespace name. The list of valid Namespace IDs are as follows:
+The Namespace ID is a UUIDv8 named-based value computed using the [Nil UUID](https://www.rfc-editor.org/rfc/rfc9562.html#name-nil-uuid) and the namespace name. The list of valid Namespace IDs are as follows:
 
 <table border="1">
 <th>Operating System<th>Namespace Name<th>Namespace ID
 <tr>
-  <td>Linux<td>ocsf-common-device-id-linux<td>85ffa100-3861-5855-b4a8-ab55931834e3
+  <td>Linux<td>ocsf-common-device-id-linux<td>15dafea5-d4f6-870a-8831-a875a3e69086
 <tr>
-  <td>macOS<td>ocsf-common-device-id-macos<td>f2af7a9b-b3a6-51f2-b7af-fbcc57489bcd
+  <td>macOS<td>ocsf-common-device-id-macos<td>00b8bd88-f54b-805f-b834-e01b21f3ad3e
 <tr>
-  <td>Windows<td>ocsf-common-device-id-windows<td>c81710e6-f7a3-53dc-b104-e6d3606b4015
+  <td>Windows<td>ocsf-common-device-id-windows<td>afa77f2c-696a-8862-8693-dc7446d7ddca
 </table>
 
 ### Name Value
@@ -116,10 +113,10 @@ f7743bfa366f496abf323ab50c2313d9
 Note dashes need to be added to the Machine ID string to create a UUID. 
 
 Then:
-- Namespace ID: `85ffa100-3861-5855-b4a8-ab55931834e3`
+- Namespace ID: `15dafea5-d4f6-870a-8831-a875a3e69086`
 - Name Value: `ver=1,id1=7444498d-d6e2-4aff-95a7-a916eb297038,id2=f7743bfa-366f-496a-bf32-3ab50c2313d9`
 
-Result (UUIDv5): `3de24de4-162b-5fa2-8c00-8155220a3485`
+Result (UUIDv8): `439f5338-1bad-8f0c-b2f0-ffef481f703f`
 
 #### macOS Example
 
@@ -135,10 +132,10 @@ X02YZ1ZYZX
 Note hexadecimal characters in the `IOPlatformUUID` needs to be changed to lowercase, but the letter case for the non-UUID `IOPlatformSerialNumber` is preserved.
 
 Then:
-- Namespace ID: `f2af7a9b-b3a6-51f2-b7af-fbcc57489bcd`
+- Namespace ID: `00b8bd88-f54b-805f-b834-e01b21f3ad3e`
 - Name Value: `ver=1,id1=89162807-1b01-5560-98c8-8d380844ab81,id2=X02YZ1ZYZX`
 
-Result (UUIDv5): `a3df0964-83b6-5dbe-838e-516f9804a8d6`
+Result (UUIDv8): `09446232-f1e6-8069-a4ab-74476c302b2a`
 
 #### Windows Example
 
@@ -154,7 +151,7 @@ Given:
 Note hexadecimal characters in the Computer System Product UUID needs to be changed to lowercase.
 
 Then:
-- Namespace ID: `c81710e6-f7a3-53dc-b104-e6d3606b4015`
+- Namespace ID: `afa77f2c-696a-8862-8693-dc7446d7ddca`
 - Name Value: `ver=1,id1=48ec0054-b51c-40ad-a03f-dcaa84bb95b9,id2=82be363f-2c7d-4da9-b0a2-d4d80d4156c7`
 
- Result (UUIDv5): `d9db161e-cf9b-5832-a30a-dfa5d06f0deb`
+ Result (UUIDv8): `e085e446-1c51-8fc4-9b95-2499b071639d`
